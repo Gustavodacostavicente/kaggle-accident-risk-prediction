@@ -1,0 +1,18 @@
+# .claudeignore
+node_modules/
+.git/
+__pycache__/
+*.pyc
+.venv/
+venv/
+kaggle/
+data/
+datasets/
+*.csv
+*.parquet
+*.jpg
+*.png
+*.mp4
+models/
+checkpoints/
+logs/
