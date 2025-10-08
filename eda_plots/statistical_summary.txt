@@ -1,0 +1,64 @@
+================================================================================
+EXPLORATORY DATA ANALYSIS SUMMARY
+================================================================================
+
+Dataset shape: (517754, 14)
+Number of features: 13
+Number of samples: 517754
+
+Missing Values:
+id                        0
+road_type                 0
+num_lanes                 0
+curvature                 0
+speed_limit               0
+lighting                  0
+weather                   0
+road_signs_present        0
+public_road               0
+time_of_day               0
+holiday                   0
+school_season             0
+num_reported_accidents    0
+accident_risk             0
+dtype: int64
+
+Descriptive Statistics:
+                  id      num_lanes      curvature    speed_limit  num_reported_accidents  accident_risk
+count  517754.000000  517754.000000  517754.000000  517754.000000           517754.000000  517754.000000
+mean   258876.500000       2.491511       0.488719      46.112575                1.187970       0.352377
+std    149462.849975       1.120434       0.272563      15.788521                0.895961       0.166417
+min         0.000000       1.000000       0.000000      25.000000                0.000000       0.000000
+25%    129438.250000       1.000000       0.260000      35.000000                1.000000       0.230000
+50%    258876.500000       2.000000       0.510000      45.000000                1.000000       0.340000
+75%    388314.750000       3.000000       0.710000      60.000000                2.000000       0.460000
+max    517753.000000       4.000000       1.000000      70.000000                7.000000       1.000000
+
+
+Target Variable (accident_risk) Statistics:
+count    517754.000000
+mean          0.352377
+std           0.166417
+min           0.000000
+25%           0.230000
+50%           0.340000
+75%           0.460000
+max           1.000000
+Name: accident_risk, dtype: float64
+
+
+Top 10 Features Correlated with Target:
+accident_risk             1.000000
+curvature                 0.543946
+speed_limit               0.430898
+num_reported_accidents    0.213891
+num_lanes                -0.006003
+Name: accident_risk, dtype: float64
+
+
+Outlier Summary:
+num_lanes: 0 outliers (0.00%)
+curvature: 0 outliers (0.00%)
+speed_limit: 0 outliers (0.00%)
+num_reported_accidents: 2649 outliers (0.51%)
+accident_risk: 3367 outliers (0.65%)

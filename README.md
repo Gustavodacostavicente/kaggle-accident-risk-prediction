@@ -176,6 +176,113 @@ The pipeline reports:
 2. **Validation RMSE**: Performance on final hold-out set
 3. **Best Parameters**: Optimal hyperparameters found by Optuna
 
+## Exploratory Data Analysis
+
+The project includes a comprehensive EDA script (`analysis_exploratory.py`) that generates detailed visualizations and statistical summaries of the training data.
+
+### Running the EDA
+
+```bash
+python analysis_exploratory.py
+```
+
+This will create an `eda_plots/` directory with all visualizations and a statistical summary report.
+
+### Generated Visualizations
+
+#### 1. Target Variable Distribution
+![Target Distribution](eda_plots/01_target_distribution.png)
+
+Analysis of the `accident_risk` target variable showing:
+- **Histogram**: Frequency distribution with mean and median indicators
+- **Box Plot**: Quartile distribution and outlier detection
+- **KDE Plot**: Kernel density estimation for smooth distribution visualization
+
+#### 2. Numeric Features Distribution
+![Numeric Histograms](eda_plots/02_numeric_histograms.png)
+
+Histograms for all numeric features in the dataset, revealing:
+- Distribution shapes (normal, skewed, uniform, etc.)
+- Value ranges and scales
+- Potential data quality issues
+
+#### 3. Outlier Detection
+![Numeric Box Plots](eda_plots/03_numeric_boxplots.png)
+
+Box plots for all numeric features using the IQR (Interquartile Range) method to identify:
+- Median values and quartiles
+- Outliers and extreme values
+- Feature variability and spread
+
+#### 4. Correlation Matrix
+![Correlation Heatmap](eda_plots/04_correlation_heatmap.png)
+
+Comprehensive correlation heatmap showing:
+- Feature-to-feature correlations
+- Correlation with target variable
+- Potential multicollinearity issues
+- Strong positive (red) and negative (blue) relationships
+
+#### 5. Feature Importance by Correlation
+![Target Correlation](eda_plots/05_target_correlation_bars.png)
+
+Bar chart ranking features by absolute correlation with `accident_risk`:
+- Green bars: Positive correlation
+- Red bars: Negative correlation
+- Helps identify most predictive features
+
+#### 6. Feature vs Target Scatter Plots
+![Scatter Plots](eda_plots/06_scatter_top_features.png)
+
+Scatter plots of the top 9 most correlated features versus the target:
+- Shows relationship patterns (linear, non-linear, clusters)
+- Includes trend lines for each feature
+- Displays correlation coefficients
+
+#### 7. Feature Relationships (Pairplot)
+![Pairplot](eda_plots/07_pairplot_top5.png)
+
+Pairwise relationships between the top 5 most correlated features:
+- Diagonal: KDE plots showing individual distributions
+- Off-diagonal: Scatter plots showing feature interactions
+- Useful for identifying feature combinations and patterns
+
+#### 8. Categorical Feature Distribution
+![Categorical Features](eda_plots/08_categorical_*.png)
+
+Bar charts for each categorical variable showing:
+- Value frequency distributions
+- Class imbalance identification
+- Rare category detection
+
+#### 9. Target by Category
+![Target by Category](eda_plots/09_target_by_*.png)
+
+Box plots showing `accident_risk` distribution across categorical groups:
+- Identifies which categories have higher/lower risk
+- Shows variance within each category
+- Helps assess categorical feature importance
+
+#### 10. Outlier Summary
+![Outlier Counts](eda_plots/10_outlier_counts.png)
+
+Comprehensive outlier analysis showing:
+- Number of outliers per feature
+- Percentage of dataset affected
+- Features requiring potential treatment
+
+### Statistical Summary
+
+A detailed text report (`eda_plots/statistical_summary.txt`) is generated containing:
+- Dataset dimensions and feature counts
+- Missing value analysis
+- Descriptive statistics (mean, std, min, max, quartiles)
+- Target variable statistics
+- Top correlated features with target
+- Outlier counts and percentages for each feature
+
+This EDA provides critical insights for feature engineering, data cleaning, and model selection decisions.
+
 ## Development
 
 See [CLAUDE.md](CLAUDE.md) for detailed development guidelines and architecture notes.
